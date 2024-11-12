@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('assets/fonts/JetBrainsMono-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono Bold';
+    src: url('assets/fonts/static/JetBrainsMono-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono Bold';
+    src: url('assets/fonts/static/JetBrainsMono-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+    font-family: 'JetBrains Mono Bold', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --neutral-1: #24232C;
+    --neutral-2: #817D92;
+    --neutral-3: #E6E5EA;
+    --neutral-4: #18171F;
+
+
+    --primary: #A4FFAF;
+    --secondary: #F64A4A;
+    --tertiary: #FB7C58;
+    --quaternary: #F8CD65;
+    
+    --reset-filter: brightness(0) saturate(100%);
+    --neutral-1-filter: invert(8%) sepia(10%) saturate(1544%) hue-rotate(207deg) brightness(96%) contrast(85%);
+    --neutral-3-filter: invert(88%) sepia(12%) saturate(54%) hue-rotate(211deg) brightness(99%) contrast(102%);
+    --primary-filter: invert(89%) sepia(15%) saturate(935%) hue-rotate(67deg) brightness(99%) contrast(106%);
+}
+
+body {
+    margin: 0;
+}
+
+/* TEXT */
+.text__heading-large {
+    font-size: 32px;
+    line-height: 43px;
+}
+
+.text__heading-medium {
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.text__body {
+    font-size: 18px;
+    line-height: 23x;
+}
+
+/* BUTTON */
+.button-primary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+
+    font-family: 'JetBrains Mono Bold', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    
+    color: var(--neutral-1);
+    background: var(--primary);
+    height: 65px;
+    width: 100%;
+    cursor: pointer;
+    
+    border: 0;
+    border: solid 1px var(--primary);
+
+}
+.button-primary:hover {
+    color: var(--primary);
+    background: var(--neutral-1);
+}
+.button-primary img {
+    filter: var(--reset-filter) var(--neutral-1-filter);
+}
+.button-primary:hover img {
+    filter: var(--reset-filter) var(--primary-filter);
+}
+
+/* CHECKBOX */
+.checkbox-primary {
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+}
+.checkbox-primary > input[type='checkbox'] {
+    cursor: pointer;
+    margin: 0;
+    height: 20px;
+    width: 20px;
+}
+.checkbox-primary > input[type='checkbox']:before {
+    content: "";
+    display: block;
+    height: 18px;
+    width: 18px;
+    background-color: var(--neutral-1);
+    border: solid 2px var(--neutral-3);
+}
+.checkbox-primary > input[type='checkbox']:hover:before {
+    border-color: var(--primary);
+}
+.checkbox-primary > input[type='checkbox']:checked:before {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.checkbox-primary > input[type='checkbox']:after {
+    content: "";
+    display: none;
+    margin-top: -19px;
+    margin-left: 2px;
+    height: 18px;
+    width: 18px;
+    background-image: url("./assets/images/icon-check.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.checkbox-primary > input[type='checkbox']:checked:after {
+    display: block;
+}
